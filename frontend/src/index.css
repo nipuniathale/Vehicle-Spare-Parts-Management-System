@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  /* black + red "performance" theme */
+  --color-primary: #0b0b0d;
+  --color-primary-soft: #16161a;
+  --color-accent: #e3161f;
+  --color-accent-dark: #b8111a;
+  --color-info: #3f6fd1;
+  --color-surface: #f4f4f6;
+  --color-ink: #121216;
+  --color-muted: #6b6f78;
+  --color-line: #e6e6ea;
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-danger: #e3161f;
+
+  /* chart colours - validated for colour-blind separation (see components/charts/palette.js) */
+  --color-chart-1: #e3161f;
+  --color-chart-2: #3f6fd1;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Poppins", "Inter", sans-serif;
+}
+
+html,
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* component classes live in the components layer so utilities (e.g. pl-9) can override them */
+@layer components {
+  .input {
+    @apply h-10 w-full rounded-lg border border-line bg-white px-3 text-sm outline-none transition
+      placeholder:text-muted/70 focus:border-accent focus:ring-4 focus:ring-accent/10
+      disabled:cursor-not-allowed disabled:bg-surface;
+  }
+
+  textarea.input {
+    @apply h-auto py-2;
+  }
+
+  .input-error {
+    @apply border-danger focus:border-danger focus:ring-danger/10;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-[0_1px_2px_rgba(16,16,20,0.04)];
+  }
+
+  /* dark "carbon" panel used for hero banners and the storefront header */
+  .carbon {
+    background-color: var(--color-primary);
+    background-image: radial-gradient(circle at 20% 0%, rgba(227, 22, 31, 0.18), transparent 45%),
+      linear-gradient(180deg, #121216 0%, #0b0b0d 100%);
+  }
+}

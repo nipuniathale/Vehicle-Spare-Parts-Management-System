@@ -1,0 +1,19 @@
+# Words that are not allowed in reviews and feedback (one per line, case does not matter).
+# Loaded once by com.autohublanka.support.ContentFilter.
+fuck
+fucking
+fucked
+shit
+shitty
+bullshit
+bitch
+bastard
+asshole
+dumbass
+idiot
+idiots
+stupid
+moron
+crap
+damn
+loser
